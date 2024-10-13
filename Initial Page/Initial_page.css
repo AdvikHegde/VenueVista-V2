@@ -1,0 +1,308 @@
+/* .venue-description ul{
+  margin:20px 0px 20px 0px;
+}
+
+.venue-description p{
+  font-family:poppins;
+  color:white;
+}
+
+.venue-rating-reviews-container li{
+  font-family: poppins;
+} */
+
+
+
+/* HOME PAGE */
+.venues-container-initial-page{
+  width:100%;
+  height:auto;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.venue-initial-page{
+  margin-top:20px;
+  padding-left:20px;
+  padding:20px;
+  flex:1;
+  height:auto;
+
+  display:flex;
+  align-items: center;
+  justify-content: start;
+
+  background-color:rgb(22, 22, 22);
+  border-radius:15px;
+  box-shadow:2px 2px 5px black;
+
+  color:white;
+}
+.venue-images{
+  width:200px;
+  height:150px;
+  border-radius:20px;
+  margin-right:20px;
+}
+.venue-image-container{
+  flex:1;
+}
+.venue-description{
+  height:100%;
+  flex:1;
+}
+
+.venue-rating-reviews-container{
+  margin-top:10px;
+  color:white;
+  font-family:poppins;
+  font-size:1em;
+}
+
+.initial-page-contact,.initial-page-address{
+  color:white;
+  font-family:poppins;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* WEBSITE HEADER */
+.website-header{
+  display:flex;
+  align-items:center;
+  width:95%;
+  margin:20px auto 0px auto;
+}
+
+.welcome-message{
+  font-size:50px;
+  display:block;
+  text-align:center;
+}
+
+.my-account{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.booking-history{
+  flex:1;
+  font:bold 15px poppins;
+  color:red;
+}
+
+.website-name-container{
+  flex:6;
+  display:flex;
+  justify-content:center;
+}
+/* .website-name-container h2{
+  color:black;
+  font:bold 2em poppins;
+} */
+
+.login-button-container,.register-button-container{
+  flex:1;
+  display:flex;
+  justify-content: end;
+}
+
+.login-button,.register-button{
+  padding:5px 10px 5px 10px;
+  border-radius:15px;
+  font:bold 15px poppins;
+  background-color:#01a72b;
+  color:white;
+  border:solid 1px black;
+}
+
+.login-button-container{
+  position:relative;
+}
+
+/* VENUES STYLES */
+/* .venue-description ul {
+  margin: 20px 0px;
+}
+
+.venue-description p {
+  font-family: poppins;
+  color: white;
+}
+
+.venue-rating-reviews-container li {
+  font-family: poppins;
+} */
+
+/* HOME PAGE */
+.venues-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.venue {
+  margin-top: 20px;
+  padding-left: 20px;
+  flex: 1;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: rgb(22, 22, 22);
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px black;
+  color: white;
+}
+
+.venue-images {
+  width: 200px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.venue-image-container {
+  flex: 1;
+}
+
+.venue-description {
+  height: 100%;
+  flex: 1;
+}
+
+.venue-name-initial-page {
+  margin-top: 10px;
+  font-family: poppins;
+  color:white;
+}
+
+/* REGISTER BLOCK STYLES */
+.register-block {
+  position: fixed; /* Use fixed positioning to stay in view */
+  top: 50%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%); /* Center the div */
+  margin: 0; /* Remove margin */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgb(34, 34, 34); /* Dark background for better contrast */
+  color: white; /* White text for readability */
+  z-index: 1000; /* Ensure it appears on top of other components */
+  width: auto; /* Set a specific width (optional) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+
+/* .register-block h2 {
+  text-align: center;
+  font-family: poppins;
+  margin-bottom: 15px;
+} */
+
+/* .register-block select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: rgb(22, 22, 22); 
+  color: white;
+} */
+
+/* WEBSITE HEADER */
+.website-header {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.my-account {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-history {
+  flex: 1;
+  font: bold 15px poppins;
+  color: red;
+}
+
+.website-name-container {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+}
+
+/* .website-name-container h2 {
+  color: black;
+  font: bold 2em poppins;
+} */
+
+.login-button-container,
+.register-button-container {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+.login-button,
+.register-button {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font: bold 15px poppins;
+  background-color: #01a72b;
+  color: white;
+  border: solid 1px black;
+}
+
+.login-button-container {
+  position: relative;
+}
+
+.venue-name{
+  font-family:poppins;
+  color:white;
+  font-size:1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

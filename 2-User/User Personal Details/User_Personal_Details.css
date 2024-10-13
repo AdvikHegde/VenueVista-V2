@@ -1,0 +1,163 @@
+.user-personal-details-body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  display: flex;
+  flex-direction:column;
+  height: auto;
+  width:auto;
+  margin-left:250px;
+}
+
+.my-details-title-container{
+  color: rgb(73, 73, 73);
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  font-size: 25px;;
+  display:block;
+  text-align:center;
+}
+
+.content-container{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.background-image-container{
+  display:flex;
+  width:auto;
+  height:auto;
+  align-items:center;
+  justify-content:center;
+  margin-left:275px;
+}
+
+.booking-card {
+  background-color: white;
+  width: 50vw;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height:auto;
+  margin:25px 50px 25px 50px;
+}
+
+.card-header {
+  background-color:white;
+  color: #01a72b;
+  padding: 20px;
+  text-align: center;
+  border:2px solid #01a72b;
+  width:95%;
+  margin:20px auto 0px auto;
+  border-radius:5px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.profile-picture{
+  display:flex;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  padding:10px 0px 10px 0px;
+  border:solid 5x black;
+}
+
+.profile-picture img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:solid 2px black;
+  margin-bottom:25px;
+}
+
+.account-information,.address-location-information-container{
+  margin-top:50px;
+}
+
+.user-details,.account-information,.address-location-information-container{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+  border:solid 1px black;
+  padding:15px 10px 15px 10px;
+  border-radius:8px;
+}
+
+.user-details div,.account-information div,.address-location-information-container div{
+  display:flex;
+}
+
+.user-details div label,input , .account-information div label,input , .address-location-information-container label,input{
+  display:flex;
+  flex:1;
+  justify-content:space-between;
+  align-items:center;
+  text-align:left;
+  padding-left:5px;
+  font-family:poppins;
+}
+.user-details input,.account-information input,.address-location-information-container input{
+  border-radius:5px;
+  border:1px solid black;
+}
+.user-details strong ,.account-information strong,.address-location-information-container strong{
+  color: #333;
+}
+
+
+
+.card-footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit{
+  background-color: white;
+  color:  #01a72b;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width:100%;
+  margin-top:20px;
+  font-size:15px;
+  font-family:poppins;
+  border:2px solid #01a72b;
+}
+
+.submit:hover {
+  background-color: #01a72b;
+  color:white;
+}
+
+@media (max-width: 400px) {
+  .booking-card {
+      width: 100%;
+      margin: 20px;
+  }
+}
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+
+.my-details-container{
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:50px;
+  display:none;
+  position:fixed;
+  background-color:gray;
+}

@@ -1,0 +1,56 @@
+.contact-admin-body{
+    margin-left:250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+  }
+  
+  .contact-admin-title{
+    color: rgb(73, 73, 73);
+  }
+  
+  .background-image-container{
+    width:auto;
+    margin:0px;
+    padding:0px;
+  }
+  
+  .contact-admin-description,.note-for-users{
+    width:50vw;
+    border:1px solid black;
+    border-radius:15px;
+    margin:10px 0px 10px 0px;
+  }
+  
+  .contact-admin-description p,.note-for-users p{
+    padding:5px 10px 5px 10px;
+    text-align: center;
+  }
+  
+  .contact-admin-mail-contact{
+    width:50vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    margin:20px 0px 20px 0px;
+  }
+  
+  .admin-mail,.admin-contact{
+    width:100%;
+    height:auto;
+  
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+  
+    border-radius:10px;
+  }
+  
+  .admin-mail img,.admin-contact img{
+    border-radius:50%;
+    width:100px;
+    height:100px;
+  }

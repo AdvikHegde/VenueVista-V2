@@ -1,0 +1,76 @@
+/* Navigation Panel Styling */
+.sidebar {
+    position: fixed; /* Fixed positioning to keep it on the left */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height of the viewport */
+    width: 250px; /* Width of the sidebar */
+    background-color: #333; /* Dark background color */
+    color: white;
+    padding: 20px;
+    overflow: auto; /* Adds scroll if the content exceeds the height */
+  }
+  
+  .sidebar .nav-list {
+    list-style: none; /* Remove bullet points */
+  }
+  
+  .sidebar .nav-list li {
+    margin: 15px 0; /* Space between menu items */
+    font-family:poppins;
+    background-color:black;
+    padding:5px 10px 5px 10px;
+    border:1px solid black;
+    border-radius:5px;
+    width:200px;
+    transition:background-color 0.25s;
+  }
+  
+  .sidebar .nav-list li:hover{
+    background-color:white;
+    color:black;
+  }
+  
+  .sidebar .nav-list a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px;
+    transition:color 0.25s;
+  }
+  
+  .sidebar .nav-list a:hover {
+    border:none;
+    color:black;
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  .list-element{
+    display:flex;
+    align-items:center;
+  }
+  
+  .list-element:hover{
+    color:black;
+  }
+  
+  .list-element img{
+    width:25px;
+    height:25px;
+    border-radius:2px;
+    background-color:white;
+    margin-right:10px;
+  }
+  
+  /* Main Content Styling */
+  .content {
+    margin-left: 270px; /* Offset content by the width of the sidebar */
+    padding: 20px;
+  }
+  
+  .content section {
+    margin-bottom: 40px; /* Space between sections */
+  }
+  
+  .nav-list li a {
+    cursor: pointer;
+  }

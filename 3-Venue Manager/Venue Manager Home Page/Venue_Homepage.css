@@ -1,0 +1,93 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container to hold Sidebar and Content */
+.page-container {
+  display: flex; /* Align sidebar and content side by side */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px; /* Fixed width for sidebar */
+  background-color: #333; /* Background color for sidebar */
+  z-index: 1; /* Keep it on top of other elements */
+}
+
+/* Content Styling */
+.content {
+  flex: 1; /* Take the remaining width */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  position: relative; /* Enable absolute positioning of children */
+}
+
+/* Background Image */
+.background-image {
+  flex: 1; /* Allow it to fill the content area */
+  background-image: url('../../images/venue-manager-image.jpg'); /* Set background image */
+  background-size: 150%; /* Zoom in by increasing the size */
+  background-position: center; /* Center the image */
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Position relative for overlay */
+  overflow: hidden; /* Hide overflow to prevent layout issues */
+}
+
+/* Apply blur effect */
+.background-image::before {
+  content: ''; /* Necessary for the pseudo-element */
+  position: absolute; /* Position it absolutely */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit; /* Use the same background image */
+  filter: blur(5px); /* Adjust blur level */
+  z-index: 0; /* Position it behind the content */
+}
+
+/* Overlay Effect */
+.overlay {
+  position: relative; /* Position relative to stack on top of the blurred image */
+  margin: 20px; /* Spacing between sections */
+  padding: 30px; /* Padding for text */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 600px; /* Limit width for better text layout */
+  text-align: center; /* Center text */
+  z-index: 2; /* Stack above the blurred background */
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem; /* Large font size for headings */
+  text-transform: uppercase; /* Uppercase letters */
+  letter-spacing: 2px; /* Letter spacing */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); /* Text shadow */
+  color: #FFD700; /* Gold color for headings */
+}
+
+/* Paragraphs */
+p {
+  font-size: 2.5rem; /* Medium font size for paragraphs */
+  margin-top: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Text shadow */
+  color: #FFFFFF; /* White color for paragraphs */
+}
+
+/* Specific section styles */
+#home {
+  text-align: center;
+  align-self: center;
+}
+
+#first {
+  align-items: center;
+  color: #FFD700; /* Gold color for the first heading */
+}

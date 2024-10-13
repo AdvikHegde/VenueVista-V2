@@ -1,0 +1,82 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Layout */
+#discounts-page {
+    display: flex; /* Use flexbox for layout */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Sidebar Styles */
+#sidebar {
+    flex: 0 0 250px; /* Fixed width for the sidebar */
+    background-color: #f8f9fa; /* Light background for the sidebar */
+    border-right: 1px solid #ddd; /* Border for separation */
+    z-index: 1; /* Ensures sidebar is above other elements */
+}
+
+/* General Container */
+#discounts-container {
+    padding: 20px; /* Inner padding */
+    background-color: #f4f4f4; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Margin around the container */
+    margin-left: 20px; /* Space from the left edge */
+    margin-right: 20px; /* Space from the right edge */
+    flex: 1; /* Allow this to take remaining space */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    max-height: calc(100vh - 40px); /* Limit height based on viewport */
+    z-index: 0; /* Ensure it’s below sidebar */
+}
+
+/* Heading Styles */
+#discounts-title {
+    text-align: center;
+    color: #333; /* Dark text color */
+    margin-bottom: 20px; /* Space below title */
+}
+
+/* Discounts List */
+#discounts-list {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack discount cards vertically */
+    gap: 20px; /* Space between cards */
+}
+
+/* Discount Card */
+.discount-card {
+    background-color: #fff; /* White background for cards */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: transform 0.3s ease; /* Animation on hover */
+    position: relative; /* Keep card in its stacking context */
+}
+
+/* Discount Card Hover Effect */
+.discount-card:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    z-index: 2; /* Bring hovered card above others */
+}
+
+/* Button Styles */
+.redeem-button {
+    display: inline-block; /* Make it an inline block */
+    margin-top: 10px; /* Space above the button */
+    padding: 10px 15px; /* Button padding */
+    background-color: #28a745; /* Green background */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Animation for background */
+}
+
+.redeem-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
