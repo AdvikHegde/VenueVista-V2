@@ -1,0 +1,217 @@
+
+    /* Main layout for sidebar and content */
+    .app-container {
+      display: flex; /* Flexbox layout to align sidebar and content */
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      position: fixed; /* Fix the sidebar to the left */
+      top: 0;
+      left: 0;
+      height: 100vh; /* Full height of the viewport */
+      width: 250px; /* Fixed width for sidebar */
+      background-color: #343a40; /* Dark background color */
+      color: white;
+      padding: 20px;
+      overflow-y: auto; /* Allows scrolling if content exceeds viewport height */
+      z-index: 1000; /* Make sure the sidebar stays on top */
+    }
+
+    /* User Details Container */
+    .user-details-container {
+      max-width: 800px; /* Restrict the maximum width */
+      width: 100%; /* Full width to use available space */
+      margin: 20px auto; /* Center the container with some margin */
+      font-family: 'Arial', sans-serif; /* Change font family */
+    }
+
+    h1 {
+      color: #007bff; /* Attractive header color */
+      text-align: center; /* Center header text */
+    }
+
+    /* Customer Header */
+    .customer-header {
+      display: flex; /* Flexbox for header layout */
+      background-color: #f8f9fa; /* Light background color for header */
+      border-bottom: 2px solid #007bff; /* Blue border below the header */
+      padding: 10px; /* Padding around the header */
+      font-weight: bold; /* Bold text for headers */
+      color: #343a40; /* Dark color for text */
+      justify-content: space-between; /* Evenly distribute items */
+      text-align: center; /* Center align text */
+    }
+
+    .header-item {
+      flex: 1; /* Equal space for each header item */
+    }
+
+    /* Customer List */
+    .customer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Space between customer cards */
+    }
+
+    /* Customer Card */
+   
+    .customer-card {
+        border: 1px solid #666; /* Darker overall border */
+        padding: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        display: flex; /* Flexbox for layout */
+        justify-content: space-between; /* Space items evenly */
+        align-items: center; /* Center items vertically */
+        background-color: #ffffff; /* White background for cards */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        border-left: 4px solid #007bff; /* Emphasized left border */
+        text-align: center; /* Center align text */
+    }
+    
+
+    .customer-item {
+      flex: 1; /* Allow child divs to grow and take available space */
+      /* Align text to the left for better readability */
+    }
+
+    .customer-card:hover {
+      background-color: #f0f8ff; /* Light blue on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      animation: slide-down 0.3s ease-out; /* Add animation for modal */
+    }
+
+    @keyframes slide-down {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      color: #343a40; /* Dark color for the modal header */
+      margin-bottom: 20px; /* Space below the header */
+    }
+
+    /* Input Group */
+    .input-group {
+      display: flex; /* Flexbox for input group */
+      align-items: center; /* Center items vertically */
+      margin-bottom: 15px; /* Space between input groups */
+    }
+
+    /* Input Styles */
+    label {
+      flex-basis: 150px; /* Fixed width for labels */
+      font-weight: bold; /* Bold text for labels */
+      color: #495057; /* Text color */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"] {
+      border: 1px solid #ced4da; /* Border color */
+      border-radius: 4px; /* Rounded corners */
+      padding: 10px; /* Padding inside inputs */
+      flex: 1; /* Allow input to fill remaining space */
+      min-width: 150px; /* Set a minimum width for better appearance */
+      transition: width 0.3s; /* Smooth transition for width changes */
+      font-size: 14px; /* Slightly larger font */
+      color: #495057; /* Text color */
+    }
+
+    input:read-only {
+      background-color: #f8f9fa; /* Light background for read-only inputs */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px; /* Adjust sidebar width for smaller screens */
+      }
+
+      .content {
+        margin-left: 200px; /* Adjust content margin accordingly */
+      }
+
+      .input-group {
+        flex-direction: column; /* Stack label and input vertically */
+        align-items: flex-start; /* Align items to start */
+      }
+
+      label {
+        margin-bottom: 5px; /* Space between label and input */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .sidebar {
+        position: relative; /* Sidebar becomes part of the normal flow */
+        width: 100%;
+        height: auto; /* Adjust sidebar height */
+      }
+
+      .content {
+        margin-left: 0; /* No margin on smaller screens */
+        padding-top: 20px;
+      }
+    }
+   .delete-button {
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+    border: none;
+    padding: 15px 20px; /* Increased padding for a larger button */
+    border-radius: 8px; /* Slightly larger border radius */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem; /* Increased font size */
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+      .delete-button:hover {
+        background-color: #c82333; /* Darker shade on hover */
+      }
+      .venue-title {
+        text-align: center; /* Center the title */
+        font-size: 3rem; /* Large font size */
+        font-weight: bold; /* Make it bold */
+        margin: 20px 0; /* Spacing above and below */
+        color: #333; /* Color of the text */
+    }
+    

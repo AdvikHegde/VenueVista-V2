@@ -18,6 +18,8 @@ app.use('/images', express.static(path.join(__dirname, '../src/images')));
 app.use(cors()); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
 
+
+
 // MongoDB connection URL and Database
 const url = 'mongodb://localhost:27017'; // Your MongoDB URL
 const dbName = 'TEST'; // Your database name
@@ -563,7 +565,282 @@ app.post('/generate-receipt', async (req, res) => {
 });
 
 
+const customerSchema = new mongoose.Schema({
+  username: String,
+  name: String,
+  email: String,
+  phone: String,
+  DOB: Date,
+  address: String,
+  country: String,
+});
 
+const Customer = mongoose.model('Customer', customerSchema);
+
+// API route to get customers
+app.get('/api/customers', async (req, res) => {
+  try {
+    const customers = await Customer.find();
+    res.json(customers);
+  } catch (error) {
+    console.error('Error fetching customers:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.use(cors());
+app.use(express.json()); // To parse JSON request bodies
+
+// Get all customers
+app.get('/api/customers', async (req, res) => {
+    try {
+        const customers = await Customer.find();
+        res.json(customers);
+    } catch (error) {
+        console.error("Error fetching customers:", error);
+        res.status(500).json({ message: 'Error fetching customers' });
+    }
+});
+
+// Delete a customer by username
+app.delete('/api/customers/username/:username', async (req, res) => {
+    const { username } = req.params;
+    console.log("Received delete request for username:", username); // Log the username
+
+    try {
+        const deletedCustomer = await Customer.findOneAndDelete({ username });
+        if (!deletedCustomer) {
+            return res.status(404).json({ message: 'Customer not found' });
+        }
+        res.status(200).json({ message: 'Customer deleted successfully' });
+    } catch (err) {
+        console.error("Error deleting customer:", err);
+        res.status(500).json({ message: 'Error deleting customer' });
+    }
+});
+// const managerSchema = new mongoose.Schema({
+//   username: String,
+//   name: String,
+//   email: String,
+//   phone: String,
+//   password: String,
+//   venuename: String,
+// });
+
+// // Create Manager model
+// const Manager = mongoose.model('Manager', managerSchema);
+
+// // API route to get all managers
+// app.get('/api/managers', async (req, res) => {
+//   try {
+//       const managers = await Manager.find();
+//       res.json(managers);
+//   } catch (error) {
+//       console.error('Error fetching managers:', error);
+//       res.status(500).send('Internal Server Error');
+//   }
+// });
+
+// // API route to delete a manager by username
+// app.delete('/api/managers/username/:username', async (req, res) => {
+//   const { username } = req.params;
+//   console.log("Received delete request for username:", username);
+
+//   try {
+//       const deletedManager = await Manager.findOneAndDelete({ username });
+//       if (!deletedManager) {
+//           return res.status(404).json({ message: 'Manager not found' });
+//       }
+//       res.status(200).json({ message: 'Manager deleted successfully' });
+//   } catch (err) {
+//       console.error("Error deleting manager:", err);
+//       res.status(500).json({ message: 'Error deleting manager' });
+//   }
+// });
+
+
+// const Venue = mongoose.model('Venue', venueSchema);
+
+
+// const venueSchema = new mongoose.Schema({
+//   venueId: String,
+//   venueName: String,
+//   venueAddress: String,
+//   price: Number,
+//   additionalServices: [String],
+// });
+// app.get('/api/venues/username/:username', async (req, res) => {
+//   const username = req.params.username;
+//   try {
+//       // Assuming there's a field in Venue schema that relates it to the Manager
+//       const venue = await Venue.findOne({ managerUsername: username }); // Adjust as needed
+//       if (!venue) {
+//           return res.status(404).json({ message: 'Venue not found' });
+//       }
+//       res.json(venue);
+//   } catch (error) {
+//       res.status(500).json({ message: 'Error fetching venue details' });
+//   }
+// });
+
+// const managerSchema = new mongoose.Schema({
+//   username: String,
+//   name: String,
+//   phone: String,
+//   password: String,
+//   venueName: String, // Link manager to a venue
+// });
+
+// const venueSchema = new mongoose.Schema({
+//   venueId: String,
+//   venueName: String,
+//   venueAddress: String,
+//   price: Number,
+//   additionalServices: [String],
+// });
+
+// // Create models
+// const Manager = mongoose.model('Manager', managerSchema);
+// const Venue = mongoose.model('Venue', venueSchema);
+
+// // API Routes
+
+// // Get all managers
+// app.get('/api/managers', async (req, res) => {
+//   try {
+//       const managers = await Manager.find();
+//       res.json(managers);
+//   } catch (error) {
+//       res.status(500).json({ message: 'Error fetching managers' });
+//   }
+// });
+
+// // Get venue details by manager's username
+// app.get('/api/venues/manager/:username', async (req, res) => {
+//   const username = req.params.username;
+//   try {
+//       const manager = await Manager.findOne({ username });
+//       if (!manager) {
+//           return res.status(404).json({ message: 'Manager not found' });
+//       }
+
+//       const venue = await Venue.findOne({ venueName: manager.venueName });
+//       if (!venue) {
+//           return res.status(404).json({ message: 'Venue not found' });
+//       }
+//       res.json(venue);
+//   } catch (error) {
+//       res.status(500).json({ message: 'Error fetching venue details' });
+//   }
+// });
+
+// // Add a new venue
+// app.post('/api/venues', async (req, res) => {
+//   const { venueId, venueName, venueAddress, price, additionalServices } = req.body;
+
+//   const newVenue = new Venue({
+//       venueId,
+//       venueName,
+//       venueAddress,
+//       price,
+//       additionalServices,
+//   });
+
+//   try {
+//       await newVenue.save();
+//       res.status(201).json(newVenue);
+//   } catch (error) {
+//       res.status(500).json({ message: 'Error creating venue' });
+//   }
+// });
+
+// // Delete a manager by username
+// app.delete('/api/managers/username/:username', async (req, res) => {
+//   const username = req.params.username;
+//   try {
+//       const result = await Manager.deleteOne({ username });
+//       if (result.deletedCount === 0) {
+//           return res.status(404).json({ message: 'Manager not found' });
+//       }
+//       res.status(204).send(); // No content to send back
+//   } catch (error) {
+//       res.status(500).json({ message: 'Error deleting manager' });
+//   }
+// });
+
+
+
+
+const ManagerSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  phone: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  venueName: { type: String, required: true } // Assuming a manager has a venue name
+});
+
+const VenueSchema = new mongoose.Schema({
+  venueName: { type: String, required: true, unique: true },
+  venueAddress: { type: String, required: true },
+  price: { type: Number, required: true },
+  additionalServices: { type: [String], default: [] }
+});
+
+const Manager = mongoose.model('Manager', ManagerSchema);
+const Venue = mongoose.model('Venue', VenueSchema);
+
+// Routes
+
+// Get all managers
+app.get('/api/managers', async (req, res) => {
+  try {
+      const managers = await Manager.find();
+      res.json(managers);
+  } catch (error) {
+      res.status(500).json({ message: 'Failed to fetch managers' });
+  }
+});
+
+// Get venue details by manager username
+app.get('/api/venue/manager/:venueName', async (req, res) => {
+  try {
+      const manager = await Manager.findOne({ username: req.params.username });
+      if (!manager) {
+          return res.status(404).json({ message: 'Manager not found' });
+      }
+      const venue = await Venue.findOne({ venueName: manager.venueName });
+      res.json(venue);
+  } catch (error) {
+      res.status(500).json({ message: 'Failed to fetch venue details' });
+  }
+});
+
+// Get venue details by venue name
+app.get('/api/venue/venueName/:venueName', async (req, res) => {
+  try {
+      const venue = await Venue.findOne({ venueName: req.params.venueName });
+      if (!venue) {
+          return res.status(404).json({ message: 'Venue not found' });
+      }
+      res.json(venue);
+  } catch (error) {
+      res.status(500).json({ message: 'Failed to fetch venue details' });
+  }
+});
+
+// Delete a manager by username
+app.delete('/api/managers/username/:username', async (req, res) => {
+  try {
+      const result = await Manager.findOneAndDelete({ username: req.params.username });
+      if (!result) {
+          return res.status(404).json({ message: 'Manager not found' });
+      }
+      res.json({ message: 'Manager deleted successfully!' });
+  } catch (error) {
+      res.status(500).json({ message: 'Failed to delete manager' });
+  }
+});
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

@@ -17,8 +17,8 @@ import Admin_Homepage from './1-Admin/Admin Home Page/Admin_Homepage.jsx';
 
 import Ad_Venue_Review from './1-Admin/Admin Venue Review/Ad_Venue_Review.jsx';
 import Ad_User_Review from './1-Admin/Admin User Review/Ad_User_Review.jsx';
-import Ad_Venue_Manager_Details from './1-Admin/Admin Venue Review/Ad_Venue_Review.jsx';
-
+import Ad_Venue_Manager_Details from './1-Admin/Admin Venue Manager Details/Ad_Venue_Manager_Details.jsx';
+import Ad_User_Details from './1-Admin/Admin User Details/Ad_User_Details.jsx';
 function App() {
   return (
     <Router>
@@ -40,6 +40,7 @@ function App() {
         <Route path="/view-reviews" element={<Ad_Venue_Review/>}></Route>
         <Route path="/view-customer-details" element={<Ad_User_Review/>}></Route>
         <Route path="/view-venue-details" element={<Ad_Venue_Manager_Details/>}></Route>
+        <Route path="/view-user-details" element={<Ad_User_Details/>}></Route>
         {/* Incorrect name for the component but cannot be bothered to change it now. */}
 
         {/* <Route path="/admin-home" element={Admin_Homepage}></Route> */}
